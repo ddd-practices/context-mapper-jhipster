@@ -1,0 +1,26 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'SampleAggregate1' Aggregate" <<Rectangle>> {
+	class SampleAggregateRoot1 <<(E,DarkSeaGreen) Entity>> {
+		ID globalID
+		String sampleAttribute
+		SampleValueObject sampleObjectReference
+		String sampleOperation(String p1, int p2)
+	}
+	class SampleValueObject <<(V,DarkSeaGreen) Value Object>> {
+	}
+	class SomethingHasHappenedNotification <<(E,#ff9f4b) Domain Event>> {
+		Date when
+	}
+}
+SampleAggregateRoot1 --> SampleValueObject : sampleObjectReference
+legend left
+  This bounded context implements the subdomain 'SampleCoreSubdomain', which contains the following entities:
+   - SampleEntity
+   - AnotherEntity
+end legend
+
+
+@enduml
