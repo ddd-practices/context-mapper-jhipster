@@ -1,0 +1,59 @@
+@startuml
+
+interface itf1 [
+  Upstream-Downstream
+]
+
+interface itf2 [
+  Upstream-Downstream
+]
+interface itf3 [
+  Upstream-Downstream
+]
+
+component comp1 [
+  DiscoveryLibrary
+]
+note left of [comp1]
+  memo of comp1
+end note
+
+
+component comp2 [
+  StructuredServiceDecomposition
+]
+note bottom of [comp2]
+  memo of comp2
+end note
+
+component comp3 [
+  LanguageCore
+]
+note top of [comp3]
+  memo of comp3
+end note
+
+component comp4 [
+  ArchitechturalRefactorings
+]
+note bottom of [comp4]
+  memo of comp4
+end note
+component comp5 [
+  Generators
+]
+note right of [comp5]
+  memo of comp5
+end note
+
+
+
+comp1 ..> itf1: use as CONFORMIST(CF)
+itf1 <-- comp3: PUBLISHED_LANGUAGE(PL)
+comp2 --> itf2: OHS, PL
+comp3 ..> itf2: use vla ACL
+comp3 <--> comp4: Shared Kernel
+comp3 --> itf3: PUBLISHED_LANGUAGE(PL)
+itf3 <.. comp5: use
+
+@enduml
