@@ -1,5 +1,7 @@
 # Usage of Context Mapper
 
+首先按照官网 撸一遍 技术文档
+
 ## 1 introduce 
 
 https://contextmapper.org/
